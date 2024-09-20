@@ -1,0 +1,17 @@
+[
+	{
+		"title": "laundry",
+		"description": "do laundry",
+		"status": "not completed"
+	},
+	{
+		"title": "buy groceries",
+		"description": "buy groceries for weekend",
+		"status": "completed"
+	},
+	{
+		"title": "do homework",
+		"description": "finish homework due friday",
+		"status": "not completed"
+	}
+]
