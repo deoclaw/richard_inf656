@@ -1,17 +1,1 @@
-[
-	{
-		"title": "laundry",
-		"description": "do laundry",
-		"status": "not completed"
-	},
-	{
-		"title": "buy groceries",
-		"description": "buy groceries for weekend",
-		"status": "completed"
-	},
-	{
-		"title": "do homework",
-		"description": "finish homework due friday",
-		"status": "not completed"
-	}
-]
+[{"title":"laundry","description":"do laundry","status":"not completed"},{"title":"groceries","description":"buy groceries for weekend","status":"completed"},{"title":"homework","description":"finish homework due friday","status":"completed"},{"title":"feed cats","description":"feed cats","status":"not completed"},{"title":"scoop litter","description":"scoop litter","status":"not completed"},{"title":"update course","description":"update assignment due dates","status":"not completed"},{"title":"pet cat","description":"pet cat","status":"completed"}]

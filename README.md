@@ -5,9 +5,11 @@ This repo contains assignments for INF 656
 ```
 Assignment
     |__taskmanager - the taskmanager assignment
-        |__package-lock.json
-        |__package.json
         |__server.json
         |__tasks.json
+    |__package-lock.json
+    |__package.json
 README.md
 ```
+
+Node_modules have been ignored
