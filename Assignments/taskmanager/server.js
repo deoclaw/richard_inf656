@@ -55,6 +55,7 @@ async function addTask(title, desc) {
 		tasks.push(element);
 		const content = JSON.stringify(tasks);
 		await fs.writeFile(path.join(__dirname, "tasks.json"), content);
+		console.log("TASK ADDED: " + element.title + " | " + element.description);
 	} catch (err) {
 		console.log("Cannot add tasks \n" + err);
 	}
@@ -82,7 +83,7 @@ async function completeTask(title) {
 
 // CLI interface - got a lot of help on readline from https://www.youtube.com/watch?v=jXaBeZ19RB4
 // I want to prompt the user to make choices and call fxns appropriately
-// Logically, I want the program to remain open/prompt until a user exits
+// Logically, I want the program to remain open/prompt until a user exits HOWEVER i cannot parse how to wait...maybe because the fxns are asynchronous but waiting on synchronous user input?
 // I also want to sanitize inputs -- for title and desc I want to be sure they're not null
 
 const prompt =
@@ -93,12 +94,14 @@ rl.on("line", function (answer) {
 	if (answer.toUpperCase().trim() === "EXIT") {
 		rl.close();
 	} else if (answer.trim() == 1) {
-		console.log("***\t\tTASKMANAGER\t\t***");
+		console.log(
+			"******************************\t\tTASKMANAGER\t\t***********************************\v"
+		);
 		listTasks();
 	} else if (answer.trim() == 2) {
-		rl.question("What is the title of the task?", function (titleansw) {
+		rl.question("What is the title of the task? \t", function (titleansw) {
 			rl.question(
-				"What is the description of the task?",
+				"What is the description of the task? \t",
 				function (descanswer) {
 					if (titleansw && descanswer) {
 						addTask(titleansw, descanswer);
@@ -114,5 +117,7 @@ rl.on("line", function (answer) {
 				completeTask(titleansw);
 			}
 		});
+	} else {
+		console.log("Invalid input. Try again.");
 	}
 });
